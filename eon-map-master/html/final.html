@@ -31,7 +31,7 @@
       }
     </script>
     <script>
-      var channel = 'eon-map'
+      var channel = 'eon-map-123456'
 
       var map = eon.map({
         id: 'map',
@@ -59,7 +59,7 @@
         };
         var torchys = [
           {
-            latlng: [28.61899,77.198],
+            latlng: [28.60899,77.2010],
             marker: me
           },
           {
@@ -96,11 +96,6 @@
                 new_torchys[i].latlng[1] + (getNonZeroRandomNumber() * 0.00001)
               ]
             }
-            new_torchys[0] =
-              {
-                latlng: [28.61899,77.198],
-                marker: me
-              }
           }
           pn.publish({
             channel: channel,

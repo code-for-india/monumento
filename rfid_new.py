@@ -10,7 +10,7 @@ def _callback(message, channel):
 def _error(message):
     print(message)
 
-pubnub.subscribe(channels="monument_channel", callback=_callback, error=_error)
+pubnub.subscribe(channels="eon-map-12345", callback=_callback, error=_error)
 
 import serial
 ser = serial.Serial('/dev/cu.SLAB_USBtoUART')
@@ -18,4 +18,4 @@ ser = serial.Serial('/dev/cu.SLAB_USBtoUART')
 while True:
     rfid = ser.read(12)
     print rfid
-    pubnub.publish('monument_channel', "[{latlng: [28.617748,77.195100],marker: me},{latlng: [28.6177,77.2011],marker: them},{latlng: [28.6172,77.1910],marker: them},{latlng: [28.617748,77.195100],marker: them},{latlng: [28.6174,77.19544],marker: them},{latlng: [28.617467,77.2022],marker: them}];", callback=callback, error=callback)
+    pubnub.publish('eon-map-12345', "[{latlng: [28.617748,77.195100],marker: me},{latlng: [28.6177,77.2011],marker: them},{latlng: [28.6172,77.1910],marker: them},{latlng: [28.617748,77.195100],marker: them},{latlng: [28.6174,77.19544],marker: them},{latlng: [28.617467,77.2022],marker: them}];", callback=callback, error=callback)
